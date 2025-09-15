@@ -1,0 +1,296 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vspscc
+*.vssscc
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+
+# Monaco
+/.mochaserver/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Yarn 3
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel
+.cache/
+
+# next.js
+.next/
+out/
+
+# nuxt.js
+.nuxt/
+
+# vuepress
+.vuepress/dist/
+
+# serverless
+.serverless/
+
+# angular
+/.angular/cache
+dist/
+tmp/
+/out-tsc
+/bazel-out
+
+# flutter
+/flutter/bin/cache/
+/flutter/bin/internal/
+
+# Miscellaneous
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+# JetBrain IDEs
+.idea/
+*.iws
+out/
+*.ipr
+
+# The .vs directory is used by Microsoft Visual Studio
+.vs/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?
+[Tt]humbs.db
+
+# Dotnet
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Common build outputs
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.lib
+*.a
+
+# Rider
+*.DotSettings.user
+
+# EF migrations
+**/Migrations/**
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+
+# BizTalk
+*.btproj.user
+
+# Database
+*.mdf
+*.ldf
+
+# Temp
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Backup
+*.bak
+*.backup
+
+# Project files
+*.csproj.user
+*.vbproj.user
+*.vcxproj.user
+
+# NuGet
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Test results
+TestResults/
+
+# StyleCop
+StyleCopReport.xml
+
+# DocFx
+_dfxt/
+
+# Visual Studio 2015/2017 cache/options
+.vs/
+*.dbmdl
+*.dbproj.schemaview
+
+# Azure Functions
+local.settings.json
