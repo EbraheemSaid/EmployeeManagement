@@ -140,7 +140,7 @@ export class EmployeeListComponent implements OnInit {
           },
           error: (error) => {
             console.error('Error deleting employee', error);
-            // You could also create an error dialog component for this
+
             alert('Error deleting employee: ' + (error.message || error));
           },
         });
