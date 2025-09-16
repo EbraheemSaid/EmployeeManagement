@@ -2,6 +2,8 @@ using EmployeeManagement.Application.Interfaces;
 using EmployeeManagement.Domain.Entities;
 using EmployeeManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EmployeeManagement.Infrastructure.Repositories;
 
@@ -45,5 +47,18 @@ public class EmployeeRepository : IEmployeeRepository
             _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
         }
+    }
+
+    public async Task<IEnumerable<Employee>> GetAllAsync(int page, int pageSize)
+    {
+        return await _context.Employees
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+    }
+    
+    public async Task<int> GetCountAsync()
+    {
+        return await _context.Employees.CountAsync();
     }
 }

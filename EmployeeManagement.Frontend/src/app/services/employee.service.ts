@@ -3,48 +3,50 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Employee } from '../models/employee.model';
+import { PagedResponse } from '../models/paged-response.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EmployeeService {
-  private apiUrl = 'http://localhost:5192/api/employees';
+  private apiUrl = `${environment.apiUrl}/employees`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(this.apiUrl)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      );
+  getAllEmployees(
+    page: number = 1,
+    pageSize: number = 10
+  ): Observable<PagedResponse<Employee>> {
+    return this.http
+      .get<PagedResponse<Employee>>(
+        `${this.apiUrl}?page=${page}&pageSize=${pageSize}`
+      )
+      .pipe(catchError(this.handleError.bind(this)));
   }
 
   getEmployeeById(id: number): Observable<Employee> {
-    return this.http.get<Employee>(`${this.apiUrl}/${id}`)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      );
+    return this.http
+      .get<Employee>(`${this.apiUrl}/${id}`)
+      .pipe(catchError(this.handleError.bind(this)));
   }
 
-  createEmployee(employee: Employee): Observable<any> {
-    return this.http.post(this.apiUrl, employee)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      );
+  createEmployee(employee: Employee): Observable<{ id: number }> {
+    return this.http
+      .post<{ id: number }>(this.apiUrl, employee)
+      .pipe(catchError(this.handleError.bind(this)));
   }
 
-  updateEmployee(id: number, employee: Employee): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, employee)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      );
+  updateEmployee(id: number, employee: Employee): Observable<void> {
+    return this.http
+      .put<void>(`${this.apiUrl}/${id}`, employee)
+      .pipe(catchError(this.handleError.bind(this)));
   }
 
-  deleteEmployee(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`)
-      .pipe(
-        catchError(this.handleError.bind(this))
-      );
+  deleteEmployee(id: number): Observable<void> {
+    return this.http
+      .delete<void>(`${this.apiUrl}/${id}`)
+      .pipe(catchError(this.handleError.bind(this)));
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

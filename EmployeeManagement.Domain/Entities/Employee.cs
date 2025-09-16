@@ -8,4 +8,5 @@ public class Employee
     public string Position { get; set; } = string.Empty;
     public decimal Salary { get; set; }
     public string PhoneNumber { get; set; } = string.Empty;
+    public Department Department { get; set; } = Department.Engineering;
 }

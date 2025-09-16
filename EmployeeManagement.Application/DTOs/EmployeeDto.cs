@@ -1,3 +1,5 @@
+using EmployeeManagement.Domain.Entities;
+
 namespace EmployeeManagement.Application.DTOs;
 
 public class EmployeeDto
@@ -8,4 +10,5 @@ public class EmployeeDto
     public string Position { get; set; } = string.Empty;
     public decimal Salary { get; set; }
     public string PhoneNumber { get; set; } = string.Empty;
+    public Department Department { get; set; }
 }

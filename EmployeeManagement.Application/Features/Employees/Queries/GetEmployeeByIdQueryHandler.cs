@@ -1,10 +1,9 @@
 using EmployeeManagement.Application.DTOs;
 using EmployeeManagement.Application.Interfaces;
 using MediatR;
-using EmployeeManagement.Application.Features.Employees.Queries;
 using EmployeeManagement.Domain.Entities;
 
-namespace EmployeeManagement.Application.Features.Employees.Handlers;
+namespace EmployeeManagement.Application.Features.Employees.Queries;
 
 public class GetEmployeeByIdQueryHandler : IRequestHandler<GetEmployeeByIdQuery, EmployeeDto>
 {

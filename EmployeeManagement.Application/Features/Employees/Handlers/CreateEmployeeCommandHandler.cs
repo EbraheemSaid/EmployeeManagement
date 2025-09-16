@@ -22,7 +22,8 @@ public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeComman
             LastName = request.LastName,
             Position = request.Position,
             Salary = request.Salary,
-            PhoneNumber = request.PhoneNumber
+            PhoneNumber = request.PhoneNumber,
+            Department = request.Department
         };
 
         var createdEmployee = await _employeeRepository.AddAsync(employee);

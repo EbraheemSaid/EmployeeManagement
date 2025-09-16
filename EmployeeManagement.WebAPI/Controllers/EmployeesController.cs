@@ -17,11 +17,11 @@ public class EmployeesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
-        var query = new GetAllEmployeesQuery();
-        var employees = await _mediator.Send(query);
-        return Ok(employees);
+        var query = new GetAllEmployeesQuery { Page = page, PageSize = pageSize };
+        var pagedResponse = await _mediator.Send(query);
+        return Ok(pagedResponse);
     }
 
     [HttpGet("{id}")]

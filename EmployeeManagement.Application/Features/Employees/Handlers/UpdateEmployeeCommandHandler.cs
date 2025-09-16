@@ -28,6 +28,7 @@ public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeComman
         employee.Position = request.Position;
         employee.Salary = request.Salary;
         employee.PhoneNumber = request.PhoneNumber;
+        employee.Department = request.Department;
 
         await _employeeRepository.UpdateAsync(employee);
     }
