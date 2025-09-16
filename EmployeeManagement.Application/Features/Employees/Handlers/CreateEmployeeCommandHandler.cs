@@ -1,4 +1,4 @@
-using EmployeeManagement.Application.Features.Employees.Commands;
+using EmployeeManagement.Application.Features.Employees.Commands.CreateEmployee;
 using EmployeeManagement.Application.Interfaces;
 using EmployeeManagement.Domain.Entities;
 using MediatR;

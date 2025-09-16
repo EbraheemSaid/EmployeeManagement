@@ -1,4 +1,4 @@
-using EmployeeManagement.Application.Features.Employees.Commands;
+using EmployeeManagement.Application.Features.Employees.Commands.UpdateEmployee;
 using EmployeeManagement.Application.Interfaces;
 using EmployeeManagement.Domain.Entities;
 using MediatR;
@@ -17,10 +17,9 @@ public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeComman
     public async Task Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
     {
         var employee = await _employeeRepository.GetByIdAsync(request.Id);
-        
         if (employee == null)
         {
-            throw new Exception($"Employee with ID {request.Id} not found.");
+            throw new ApplicationException("Employee not found.");
         }
 
         employee.FirstName = request.FirstName;

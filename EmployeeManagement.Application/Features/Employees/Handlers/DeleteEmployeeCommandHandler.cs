@@ -1,5 +1,6 @@
-using EmployeeManagement.Application.Features.Employees.Commands;
+using EmployeeManagement.Application.Features.Employees.Commands.DeleteEmployee;
 using EmployeeManagement.Application.Interfaces;
+using EmployeeManagement.Domain.Entities;
 using MediatR;
 
 namespace EmployeeManagement.Application.Features.Employees.Handlers;
@@ -16,10 +17,9 @@ public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeComman
     public async Task Handle(DeleteEmployeeCommand request, CancellationToken cancellationToken)
     {
         var employee = await _employeeRepository.GetByIdAsync(request.Id);
-        
         if (employee == null)
         {
-            throw new Exception($"Employee with ID {request.Id} not found.");
+            throw new ApplicationException("Employee not found.");
         }
 
         await _employeeRepository.DeleteAsync(request.Id);

@@ -1,7 +1,8 @@
 using EmployeeManagement.Application.Interfaces;
-using EmployeeManagement.Application.Features.Employees.Commands;
+using EmployeeManagement.Application.Features.Employees.Commands.CreateEmployee;
 using EmployeeManagement.Infrastructure.Data;
 using EmployeeManagement.Infrastructure.Repositories;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add FluentValidation
+builder.Services.AddValidatorsFromAssembly(typeof(CreateEmployeeCommand).Assembly);
 
 // Add DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
